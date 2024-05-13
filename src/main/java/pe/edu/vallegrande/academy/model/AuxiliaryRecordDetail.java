@@ -6,24 +6,18 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
-@Table(name = "grade")
+@Table(name = "auxiliary_record_detail")
 @Getter
 @Setter
-public class Grade {
+public class AuxiliaryRecordDetail {
 
     @Id
     @Column(value = "id")
     private Long id;
 
-    @Column(value = "grade")
-    private String grade;
+    @Column(value = "note")
+    private Long note;
 
-    @Column(value = "section")
-    private String section;
-
-    @Column(value = "academic_level")
-    private String academicLevel;
-
-    @Column(value = "status")
-    private String status;
+    @Column(value = "auxiliary_record_id")
+    private Long auxiliaryRecordId;
 }

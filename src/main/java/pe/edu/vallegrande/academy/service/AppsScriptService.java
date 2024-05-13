@@ -15,7 +15,7 @@ public class AppsScriptService {
     @Autowired
     private StudentRepository studentRepository;
 
-    private final String SCRIPT_ID = "AKfycbxHFnnKuA9X9Rs3npajV0CpZbXNXzze2Dw1V-cFUSIo4jXb6hOiBcLGPc2_LX1R9MVtgg";
+    private final String SCRIPT_ID = "AKfycbyhUeEXow4MrVBnU1BgfRiA5K-J4w6UocZqZ78-XbodY7mxzP7K8Jvl0Hm2hFMwEuNq";
 
     public Mono<String> generatePdf() {
 

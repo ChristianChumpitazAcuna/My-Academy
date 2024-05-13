@@ -24,17 +24,18 @@ public class StudentRest {
     public Mono<ResponseEntity<String>> generatePdf() {
         return appsScriptService.generatePdf()
                 .map(response -> ResponseEntity.ok("PDFs generados exitosamente: " + response))
-                .onErrorReturn(ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error al generar PDFs"));
+                .onErrorReturn(ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                        .body("Error al generar PDFs"));
     }
 
     @GetMapping("/actives")
-    public ResponseEntity<Flux<Student>> findActives() {
-        return ResponseEntity.ok(studentService.findActivess());
+    public ResponseEntity<Flux<Student>> findAllActives() {
+        return ResponseEntity.ok(studentService.getActives());
     }
 
     @GetMapping("/inactives")
-    public ResponseEntity<Flux<Student>> findInactives() {
-        return ResponseEntity.ok(studentService.findInactives());
+    public ResponseEntity<Flux<Student>> findAllInactives() {
+        return ResponseEntity.ok(studentService.getInactives());
     }
 
     @PostMapping()

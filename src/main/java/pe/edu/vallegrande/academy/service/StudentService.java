@@ -13,12 +13,12 @@ public class StudentService {
     @Autowired
     private StudentRepository studentRepository;
 
-    public Flux<Student> findInactives() {
-        return studentRepository.findByStatus("I");
+    public Flux<Student> getActives() {
+        return studentRepository.findByStatus("A");
     }
 
-    public Flux<Student> findActivess() {
-        return studentRepository.findByStatus("A");
+    public Flux<Student> getInactives() {
+        return studentRepository.findByStatus("I");
     }
 
     public Mono<Student> save(Student student) {
@@ -44,9 +44,6 @@ public class StudentService {
                     }
                     if (student.getEmail() != null) {
                         existingStudent.setEmail(student.getEmail());
-                    }
-                    if (student.getGrade() != null) {
-                        existingStudent.setGrade(student.getGrade());
                     }
                     return studentRepository.save(existingStudent);
                 });

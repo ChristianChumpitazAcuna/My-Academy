@@ -6,23 +6,17 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
-@Table(name = "student")
+@Table(name = "course_competence")
 @Getter
 @Setter
-public class Student {
+public class CourseCompetence {
     @Id
     @Column(value = "id")
     private Long id;
 
-    @Column(value = "name")
-    private String name;
+    @Column(value = "course_id")
+    private Long courseId;
 
-    @Column(value = "last_name")
-    private String lastName;
-
-    @Column(value = "email")
-    private String email;
-
-    @Column(value = "status")
-    private String status;
+    @Column(value = "competence_id")
+    private Long competenceId;
 }
